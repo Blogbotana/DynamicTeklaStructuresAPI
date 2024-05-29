@@ -113,10 +113,10 @@ public class Point
         args[1] = Y;
         teklaObject = TSActivator.CreateInstance("Tekla.Structures.Geometry3d.Point", args);
     }
-    public Point(Dynamic.Tekla.Structures.Geometry3d.Point Point)
+    public Point(Point Point)
     {
         object[] args = new object[1];
-        args[0] = Dynamic.Tekla.Structures.Geometry3d.Point_.GetTSObject(Point);
+        args[0] = Point_.GetTSObject(Point);
         teklaObject = TSActivator.CreateInstance("Tekla.Structures.Geometry3d.Point", args);
     }
 
@@ -153,11 +153,11 @@ public class Point
 
 
     public static bool AreEqual(
-            Dynamic.Tekla.Structures.Geometry3d.Point Point1_,
-            Dynamic.Tekla.Structures.Geometry3d.Point Point2_)
+            Point Point1_,
+            Point Point2_)
     {
-        dynamic Point1 = Dynamic.Tekla.Structures.Geometry3d.Point_.GetTSObject(Point1_);
-        dynamic Point2 = Dynamic.Tekla.Structures.Geometry3d.Point_.GetTSObject(Point2_);
+        dynamic Point1 = Point_.GetTSObject(Point1_);
+        dynamic Point2 = Point_.GetTSObject(Point2_);
         bool result = (bool)MethodInvoker.InvokeStaticMethod("Tekla.Structures.Geometry3d.Point", "AreEqual", Point1, Point2);
         return result;
     }
@@ -229,8 +229,32 @@ internal static class Point_
         parameters[0] = tsObject;
         parameters[1] = new System.DateTime();
 
-        Point dynObject = (Dynamic.Tekla.Structures.Geometry3d.Point)System.Activator.CreateInstance(type, parameters);
+        Point dynObject = (Point)System.Activator.CreateInstance(type, parameters);
         dynObject.teklaObject = tsObject;
         return dynObject;
+    }
+}
+internal static class PointArray_
+{
+    public static dynamic GetTSObject(Point[] dynArray)
+    {
+        if (dynArray is null) return null;
+        var list = new System.Collections.Generic.List<dynamic>();
+        foreach (var dynItem in dynArray)
+        {
+            list.Add(Point_.GetTSObject(dynItem));
+        }
+        return list.ToArray();
+    }
+
+    public static Point[] FromTSObject(dynamic[] tsArray)
+    {
+        if (tsArray is null) return null;
+        var list = new System.Collections.Generic.List<Point>();
+        foreach (var tsItem in tsArray)
+        {
+            list.Add(Point_.FromTSObject(tsItem));
+        }
+        return list.ToArray();
     }
 }

@@ -1,3 +1,4 @@
+using Dynamic.Tekla.Structures.Geometry3d;
 using Dynamic.Tekla.Structures.Internal;
 using Dynamic.Tekla.Structures.Internal.Exceptions;
 using Dynamic.Tekla.Structures.Internal.Invoker;
@@ -582,15 +583,15 @@ public class BasePoint
             throw DynamicAPINotFoundException.CouldNotFindMethod(nameof(Delete), ex);
         }
     }
-    public Dynamic.Tekla.Structures.Geometry3d.CoordinateSystem GetCoordinateSystem(
-            Dynamic.Tekla.Structures.Model.BasePoint.CoordinateSystemType CoordsysType_)
+    public CoordinateSystem GetCoordinateSystem(
+            BasePoint.CoordinateSystemType CoordsysType_)
     {
-        var CoordsysType = Dynamic.Tekla.Structures.Model.BasePoint.CoordinateSystemType_.GetTSObject(CoordsysType_);
+        var CoordsysType = BasePoint.CoordinateSystemType_.GetTSObject(CoordsysType_);
         try
         {
             var result = teklaObject.GetCoordinateSystem(CoordsysType);
 
-            var _result = Dynamic.Tekla.Structures.Geometry3d.CoordinateSystem_.FromTSObject(result);
+            var _result = CoordinateSystem_.FromTSObject(result);
             return _result;
         }
         catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
@@ -629,15 +630,15 @@ public class BasePoint
         }
     }
 
-    public Dynamic.Tekla.Structures.Geometry3d.Point ConvertToBasePoint(
-            Dynamic.Tekla.Structures.Geometry3d.Point point_)
+    public Point ConvertToBasePoint(
+            Point point_)
     {
-        var point = Dynamic.Tekla.Structures.Geometry3d.Point_.GetTSObject(point_);
+        var point = Point_.GetTSObject(point_);
         try
         {
             var result = teklaObject.ConvertToBasePoint(point);
 
-            var _result = Dynamic.Tekla.Structures.Geometry3d.Point_.FromTSObject(result);
+            var _result = Point_.FromTSObject(result);
             return _result;
         }
         catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
@@ -646,15 +647,15 @@ public class BasePoint
         }
     }
 
-    public Dynamic.Tekla.Structures.Geometry3d.Point ConvertFromBasePoint(
-            Dynamic.Tekla.Structures.Geometry3d.Point point_)
+    public Point ConvertFromBasePoint(
+            Point point_)
     {
-        var point = Dynamic.Tekla.Structures.Geometry3d.Point_.GetTSObject(point_);
+        var point = Point_.GetTSObject(point_);
         try
         {
             var result = teklaObject.ConvertFromBasePoint(point);
 
-            var _result = Dynamic.Tekla.Structures.Geometry3d.Point_.FromTSObject(result);
+            var _result = Point_.FromTSObject(result);
             return _result;
         }
         catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
@@ -663,25 +664,25 @@ public class BasePoint
         }
     }
 
-    public static Dynamic.Tekla.Structures.Geometry3d.Point ConvertToBasePoint(
-            Dynamic.Tekla.Structures.Model.BasePoint basePoint_,
-            Dynamic.Tekla.Structures.Geometry3d.Point point_)
+    public static Point ConvertToBasePoint(
+            BasePoint basePoint_,
+            Point point_)
     {
-        var basePoint = Dynamic.Tekla.Structures.Model.BasePoint_.GetTSObject(basePoint_);
-        var point = Dynamic.Tekla.Structures.Geometry3d.Point_.GetTSObject(point_);
+        var basePoint = BasePoint_.GetTSObject(basePoint_);
+        var point = Point_.GetTSObject(point_);
         var result = MethodInvoker.InvokeStaticMethod("Tekla.Structures.Model.BasePoint", "ConvertToBasePoint", basePoint, point);
-        var _result = Dynamic.Tekla.Structures.Geometry3d.Point_.FromTSObject(result);
+        var _result = Point_.FromTSObject(result);
         return _result;
     }
 
-    public static Dynamic.Tekla.Structures.Geometry3d.Point ConvertFromBasePoint(
-            Dynamic.Tekla.Structures.Model.BasePoint basePoint_,
-            Dynamic.Tekla.Structures.Geometry3d.Point point_)
+    public static Point ConvertFromBasePoint(
+            BasePoint basePoint_,
+            Point point_)
     {
-        var basePoint = Dynamic.Tekla.Structures.Model.BasePoint_.GetTSObject(basePoint_);
-        var point = Dynamic.Tekla.Structures.Geometry3d.Point_.GetTSObject(point_);
+        var basePoint = BasePoint_.GetTSObject(basePoint_);
+        var point = Point_.GetTSObject(point_);
         var result = MethodInvoker.InvokeStaticMethod("Tekla.Structures.Model.BasePoint", "ConvertFromBasePoint", basePoint, point);
-        var _result = Dynamic.Tekla.Structures.Geometry3d.Point_.FromTSObject(result);
+        var _result = Point_.FromTSObject(result);
         return _result;
     }
 
@@ -743,7 +744,7 @@ internal static class BasePoint_
         parameters[0] = tsObject;
         parameters[1] = new DateTime();
 
-        var dynObject = (Dynamic.Tekla.Structures.Model.BasePoint)Activator.CreateInstance(type, parameters);
+        var dynObject = (BasePoint)Activator.CreateInstance(type, parameters);
         dynObject.teklaObject = tsObject;
         return dynObject;
     }

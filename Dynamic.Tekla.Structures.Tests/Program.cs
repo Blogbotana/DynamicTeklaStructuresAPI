@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dynamic.Tekla.Structures.Geometry3d;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,8 @@ namespace Dynamic_Tekla.Structures.Tests
     {
         static void Main(string[] args)
         {
-            //Tekla.Structures.Geometry3d.Point//.ProjectInfo.GetBasePoints();
+            
+            //Tekla.Structures.Geometry3d.Vector//.ProjectInfo.GetBasePoints();
            //var status = new Dynamic.Tekla.Structures.Model.Model().GetConnectionStatus();
         }
     }
