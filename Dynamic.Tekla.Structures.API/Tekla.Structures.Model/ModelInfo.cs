@@ -161,7 +161,7 @@ public class ModelInfo
 
     internal ModelInfo() { }
 
-    public ModelInfo(dynamic tsObject, System.DateTime nonConflictParameter)
+    public ModelInfo(dynamic tsObject, DateTime nonConflictParameter)
     {
         teklaObject = tsObject;
     }

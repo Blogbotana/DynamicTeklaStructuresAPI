@@ -1,5 +1,6 @@
 ﻿using Dynamic.Tekla.Structures.Internal;
 using Dynamic.Tekla.Structures.Internal.Exceptions;
+using System;
 
 namespace Dynamic.Tekla.Structures.Geometry3d;
 public class IndirectPolymeshEdge
@@ -120,7 +121,7 @@ public class IndirectPolymeshEdge
         teklaObject = TSActivator.CreateInstance("Tekla.Structures.Geometry3d.IndirectPolymeshEdge");
     }
     
-    public IndirectPolymeshEdge(dynamic tsObject, System.DateTime nonConflictParameter)
+    public IndirectPolymeshEdge(dynamic tsObject, DateTime nonConflictParameter)
     {
         teklaObject = tsObject;
     }
@@ -146,7 +147,7 @@ internal static class IndirectPolymeshEdge_
 
         var parameters = new object[2];
         parameters[0] = tsObject;
-        parameters[1] = new System.DateTime();
+        parameters[1] = new DateTime();
 
         var dynObject = (IndirectPolymeshEdge)System.Activator.CreateInstance(type, parameters);
         dynObject.teklaObject = tsObject;

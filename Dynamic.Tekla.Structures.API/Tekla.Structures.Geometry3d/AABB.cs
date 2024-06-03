@@ -1,5 +1,7 @@
 ﻿using Dynamic.Tekla.Structures.Internal;
 using Dynamic.Tekla.Structures.Internal.Exceptions;
+using System;
+using System.Collections.Generic;
 
 namespace Dynamic.Tekla.Structures.Geometry3d;
 public class AABB : IBoundingVolume
@@ -69,7 +71,7 @@ public class AABB : IBoundingVolume
         teklaObject = TSActivator.CreateInstance("Tekla.Structures.Geometry3d.AABB");
     }
 
-    public AABB(dynamic tsObject, System.DateTime nonConflictParameter)
+    public AABB(dynamic tsObject, DateTime nonConflictParameter)
     {
         teklaObject = tsObject;
     }
@@ -80,7 +82,7 @@ public class AABB : IBoundingVolume
         args[1] = Point_.GetTSObject(MaxPoint);
         this.teklaObject = TSActivator.CreateInstance("Tekla.Structures.Geometry3d.AABB", args);
     }
-    public AABB(System.Collections.Generic.IEnumerable<Point> Points)
+    public AABB(IEnumerable<Point> Points)
     {
         var args = new object[1];
         args[0] = Points;
@@ -270,7 +272,7 @@ internal static class AABB_
 
         var parameters = new object[2];
         parameters[0] = tsObject;
-        parameters[1] = new System.DateTime();
+        parameters[1] = new DateTime();
 
         var dynObject = (AABB)System.Activator.CreateInstance(type, parameters);
         dynObject.teklaObject = tsObject;

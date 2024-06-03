@@ -117,7 +117,7 @@ internal static class Vector_
 
         object[] parameters = new object[2];
         parameters[0] = tsObject;
-        parameters[1] = new System.DateTime();
+        parameters[1] = new DateTime();
 
         Vector dynObject = (Vector)System.Activator.CreateInstance(type, parameters);
         dynObject.teklaObject = tsObject;

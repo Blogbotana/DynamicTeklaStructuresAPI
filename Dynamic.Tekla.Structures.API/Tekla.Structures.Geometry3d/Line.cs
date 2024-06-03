@@ -1,5 +1,6 @@
 ﻿using Dynamic.Tekla.Structures.Internal;
 using Dynamic.Tekla.Structures.Internal.Exceptions;
+using System;
 
 namespace Dynamic.Tekla.Structures.Geometry3d;
 public class Line
@@ -66,7 +67,7 @@ public class Line
         teklaObject = TSActivator.CreateInstance("Tekla.Structures.Geometry3d.Line");
     }
 
-    public Line(dynamic tsObject, System.DateTime nonConflictParameter)
+    public Line(dynamic tsObject, DateTime nonConflictParameter)
     {
         teklaObject = tsObject;
     }
@@ -108,7 +109,7 @@ internal static class Line_
 
         var parameters = new object[2];
         parameters[0] = tsObject;
-        parameters[1] = new System.DateTime();
+        parameters[1] = new DateTime();
 
         var dynObject = (Dynamic.Tekla.Structures.Geometry3d.Line)System.Activator.CreateInstance(type, parameters);
         dynObject.teklaObject = tsObject;

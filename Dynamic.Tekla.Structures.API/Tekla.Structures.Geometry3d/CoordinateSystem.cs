@@ -1,5 +1,6 @@
 ﻿using Dynamic.Tekla.Structures.Internal;
 using Dynamic.Tekla.Structures.Internal.Exceptions;
+using System;
 
 namespace Dynamic.Tekla.Structures.Geometry3d;
 /// <summary>
@@ -40,7 +41,7 @@ public class CoordinateSystem
             }
         }
     }
-    public Dynamic.Tekla.Structures.Geometry3d.Vector AxisX
+    public Vector AxisX
     {
         get
         {
@@ -48,7 +49,7 @@ public class CoordinateSystem
             {
                 var value = teklaObject.AxisX;
                 var value_ = Dynamic.Tekla.Structures.Geometry3d.Vector_.FromTSObject(value);
-                return (Dynamic.Tekla.Structures.Geometry3d.Vector)value_;
+                return (Vector)value_;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
@@ -69,7 +70,7 @@ public class CoordinateSystem
         }
     }
 
-    public Dynamic.Tekla.Structures.Geometry3d.Vector AxisY
+    public Vector AxisY
     {
         get
         {
@@ -77,7 +78,7 @@ public class CoordinateSystem
             {
                 var value = teklaObject.AxisY;
                 var value_ = Dynamic.Tekla.Structures.Geometry3d.Vector_.FromTSObject(value);
-                return (Dynamic.Tekla.Structures.Geometry3d.Vector)value_;
+                return (Vector)value_;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
@@ -102,7 +103,7 @@ public class CoordinateSystem
     {
         teklaObject = TSActivator.CreateInstance("Tekla.Structures.Geometry3d.CoordinateSystem");
     }
-    public CoordinateSystem(dynamic tsObject, System.DateTime nonConflictParameter)
+    public CoordinateSystem(dynamic tsObject, DateTime nonConflictParameter)
     {
         teklaObject = tsObject;
     }
@@ -130,7 +131,7 @@ internal static class CoordinateSystem_
 
         object[] parameters = new object[2];
         parameters[0] = tsObject;
-        parameters[1] = new System.DateTime();
+        parameters[1] = new DateTime();
 
         CoordinateSystem dynObject = (CoordinateSystem)System.Activator.CreateInstance(type, parameters);
         dynObject.teklaObject = tsObject;

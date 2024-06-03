@@ -1,6 +1,7 @@
 ﻿using Dynamic.Tekla.Structures.Internal;
 using Dynamic.Tekla.Structures.Internal.Exceptions;
 using Dynamic.Tekla.Structures.Internal.Invoker;
+using System;
 using System.Collections.Generic;
 
 namespace Dynamic.Tekla.Structures.Geometry3d;
@@ -171,7 +172,7 @@ public class Matrix
         teklaObject = TSActivator.CreateInstance("Tekla.Structures.Geometry3d.Matrix");
     }
 
-    public Matrix(dynamic tsObject, System.DateTime nonConflictParameter)
+    public Matrix(dynamic tsObject, DateTime nonConflictParameter)
     {
         teklaObject = tsObject;
     }
@@ -199,7 +200,7 @@ internal static class Matrix_
 
         var parameters = new object[2];
         parameters[0] = tsObject;
-        parameters[1] = new System.DateTime();
+        parameters[1] = new DateTime();
 
         var dynObject = (Matrix)System.Activator.CreateInstance(type, parameters);
         dynObject.teklaObject = tsObject;

@@ -11,9 +11,9 @@ namespace Dynamic_Tekla.Structures.Tests
     {
         static void Main(string[] args)
         {
-            
+            Tekla.Structures.Identifier
             //Tekla.Structures.Geometry3d.Vector//.ProjectInfo.GetBasePoints();
-           //var status = new Dynamic.Tekla.Structures.Model.Model().GetConnectionStatus();
+            //var status = new Dynamic.Tekla.Structures.Model.Model().GetConnectionStatus();
         }
     }
 }

@@ -155,7 +155,7 @@ internal static class PolyLine_
 
         var parameters = new object[2];
         parameters[0] = tsObject;
-        parameters[1] = new System.DateTime();
+        parameters[1] = new DateTime();
 
         var dynObject = (Dynamic.Tekla.Structures.Geometry3d.PolyLine)System.Activator.CreateInstance(type, parameters);
         dynObject.teklaObject = tsObject;

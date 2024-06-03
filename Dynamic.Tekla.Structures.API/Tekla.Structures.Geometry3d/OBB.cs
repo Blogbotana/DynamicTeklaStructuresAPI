@@ -170,7 +170,7 @@ public class OBB : IEquatable<OBB>
         teklaObject = TSActivator.CreateInstance("Tekla.Structures.Geometry3d.OBB");
     }
 
-    public OBB(dynamic tsObject, System.DateTime nonConflictParameter)
+    public OBB(dynamic tsObject, DateTime nonConflictParameter)
     {
         teklaObject = tsObject;
     }
@@ -589,7 +589,7 @@ internal static class OBB_
 
         object[] parameters = new object[2];
         parameters[0] = tsObject;
-        parameters[1] = new System.DateTime();
+        parameters[1] = new DateTime();
 
         OBB dynObject = (Dynamic.Tekla.Structures.Geometry3d.OBB)System.Activator.CreateInstance(type, parameters);
         dynObject.teklaObject = tsObject;

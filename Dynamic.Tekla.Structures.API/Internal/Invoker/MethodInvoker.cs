@@ -22,7 +22,7 @@ public static class MethodInvoker
         System.Reflection.MethodInfo method = TSActivator.GetMethod(methodName, parameters, type);
 
         dynamic result = method.Invoke(teklaObject, parameters);
-        param1 = (System.Collections.Generic.Dictionary<string, double>)parameters[0];
+        param1 = (Dictionary<string, double>)parameters[0];
         return result;
     }
 
@@ -34,7 +34,7 @@ public static class MethodInvoker
         System.Reflection.MethodInfo method = TSActivator.GetMethod(methodName, parameters, type);
 
         dynamic result = method.Invoke(teklaObject, parameters);
-        param1 = (System.Collections.Generic.Dictionary<string, int>)parameters[0];
+        param1 = (Dictionary<string, int>)parameters[0];
         return result;
     }
 
@@ -46,7 +46,7 @@ public static class MethodInvoker
         System.Reflection.MethodInfo method = TSActivator.GetMethod(methodName, parameters, type);
 
         dynamic result = method.Invoke(teklaObject, parameters);
-        param1 = (System.Collections.Generic.Dictionary<string, string>)parameters[0];
+        param1 = (Dictionary<string, string>)parameters[0];
         return result;
     }
 
@@ -72,7 +72,7 @@ public static class MethodInvoker
 
         dynamic result = method.Invoke(teklaObject, parameters);
         _ = parameters[0];
-        param2 = (System.Collections.Generic.Dictionary<string, double>)parameters[1];
+        param2 = (Dictionary<string, double>)parameters[1];
         return result;
     }
 
@@ -85,7 +85,7 @@ public static class MethodInvoker
 
         dynamic result = method.Invoke(teklaObject, parameters);
         _ = parameters[0];
-        param2 = (System.Collections.Generic.Dictionary<string, int>)parameters[1];
+        param2 = (Dictionary<string, int>)parameters[1];
         return result;
     }
 
@@ -98,7 +98,7 @@ public static class MethodInvoker
 
         dynamic result = method.Invoke(teklaObject, parameters);
         _ = parameters[0];
-        param2 = (System.Collections.Generic.Dictionary<string, string>)parameters[1];
+        param2 = (Dictionary<string, string>)parameters[1];
         return result;
     }
 

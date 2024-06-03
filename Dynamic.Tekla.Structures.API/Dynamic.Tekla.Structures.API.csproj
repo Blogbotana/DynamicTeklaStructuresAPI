@@ -8,8 +8,8 @@
     <ProjectGuid>{00FC193E-C063-4D09-82C4-287A2DDAA7F7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Dynamic.Tekla.Structures</RootNamespace>
-    <AssemblyName>Dynamic.Tekla.Structures</AssemblyName>
+    <RootNamespace>Dynamic</RootNamespace>
+    <AssemblyName>Dynamic</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -81,7 +81,32 @@
     <Compile Include="Tekla.Structures.Model\Model.cs" />
     <Compile Include="Tekla.Structures.Model\ModelInfo.cs" />
     <Compile Include="Tekla.Structures.Model\ProjectInfo.cs" />
+    <Compile Include="Tekla.Structures.Solid\Edge.cs" />
+    <Compile Include="Tekla.Structures.Solid\EdgeEnumerator.cs" />
+    <Compile Include="Tekla.Structures.Solid\Face.cs" />
+    <Compile Include="Tekla.Structures.Solid\FaceEnumerator.cs" />
+    <Compile Include="Tekla.Structures.Solid\ISolid.cs" />
+    <Compile Include="Tekla.Structures.Solid\Loop.cs" />
+    <Compile Include="Tekla.Structures.Solid\LoopEnumerator.cs" />
+    <Compile Include="Tekla.Structures.Solid\Shell.cs" />
+    <Compile Include="Tekla.Structures.Solid\ShellEnumerator.cs" />
+    <Compile Include="Tekla.Structures.Solid\VertexEnumerator.cs" />
     <Compile Include="Tekla.Structures\Assertion.cs" />
+    <Compile Include="Tekla.Structures\AutoDirectionTypeEnum.cs" />
+    <Compile Include="Tekla.Structures\ClashCheckOptions.cs" />
+    <Compile Include="Tekla.Structures\ComponentDefinitionTypeEnum.cs" />
+    <Compile Include="Tekla.Structures\ComponentOptions.cs" />
+    <Compile Include="Tekla.Structures\ConnectionStatusEnum.cs" />
+    <Compile Include="Tekla.Structures\DetailTypeEnum.cs" />
+    <Compile Include="Tekla.Structures\Identifier.cs" />
+    <Compile Include="Tekla.Structures\ModuleManager.cs" />
+    <Compile Include="Tekla.Structures\PositionTypeEnum.cs" />
+    <Compile Include="Tekla.Structures\PropertyTypeEnum.cs" />
+    <Compile Include="Tekla.Structures\TeklaStructuresDatabaseTypeEnum.cs" />
+    <Compile Include="Tekla.Structures\TeklaStructuresFiles.cs" />
+    <Compile Include="Tekla.Structures\TeklaStructuresInfo.cs" />
+    <Compile Include="Tekla.Structures\TeklaStructuresSettings.cs" />
+    <Compile Include="Tekla.Structures\TeklaStructuresVariables.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

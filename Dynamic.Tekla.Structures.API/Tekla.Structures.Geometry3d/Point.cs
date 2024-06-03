@@ -1,6 +1,7 @@
 using Dynamic.Tekla.Structures.Internal;
 using Dynamic.Tekla.Structures.Internal.Exceptions;
 using Dynamic.Tekla.Structures.Internal.Invoker;
+using System;
 
 namespace Dynamic.Tekla.Structures.Geometry3d;
 /// <summary>
@@ -94,7 +95,7 @@ public class Point
     {
         teklaObject = TSActivator.CreateInstance("Tekla.Structures.Geometry3d.Point");
     }
-    public Point(dynamic tsObject, System.DateTime nonConflictParameter)
+    public Point(dynamic tsObject, DateTime nonConflictParameter)
     {
         teklaObject = tsObject;
     }
@@ -227,7 +228,7 @@ internal static class Point_
 
         object[] parameters = new object[2];
         parameters[0] = tsObject;
-        parameters[1] = new System.DateTime();
+        parameters[1] = new DateTime();
 
         Point dynObject = (Point)System.Activator.CreateInstance(type, parameters);
         dynObject.teklaObject = tsObject;

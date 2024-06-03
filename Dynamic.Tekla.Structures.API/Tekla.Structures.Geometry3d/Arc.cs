@@ -160,7 +160,7 @@ public class Arc : ICurve, IEquatable<ICurve>
     internal dynamic teklaObject;
 
     internal Arc() { }
-    public Arc(dynamic tsObject, System.DateTime nonConflictParameter)
+    public Arc(dynamic tsObject, DateTime nonConflictParameter)
     {
         teklaObject = tsObject;
     }
@@ -208,7 +208,7 @@ internal static class Arc_
 
         var parameters = new object[2];
         parameters[0] = tsObject;
-        parameters[1] = new System.DateTime();
+        parameters[1] = new DateTime();
 
         var dynObject = (Arc)System.Activator.CreateInstance(type, parameters);
         dynObject.teklaObject = tsObject;

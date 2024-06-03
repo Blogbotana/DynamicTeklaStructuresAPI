@@ -104,7 +104,7 @@ public class Polycurve : IEnumerable<ICurve>, IEnumerable, ICurve, IEquatable<IC
         this.teklaObject = TSActivator.CreateInstance("Tekla.Structures.Geometry3d.Polycurve");
     }
 
-    public Polycurve(dynamic tsObject, System.DateTime nonConflictParameter)
+    public Polycurve(dynamic tsObject, DateTime nonConflictParameter)
     {
         this.teklaObject = tsObject;
     }
@@ -131,7 +131,7 @@ internal static class Polycurve_
 
         var parameters = new object[2];
         parameters[0] = tsObject;
-        parameters[1] = new System.DateTime();
+        parameters[1] = new DateTime();
 
         var dynObject = (Dynamic.Tekla.Structures.Geometry3d.Polycurve)System.Activator.CreateInstance(type, parameters);
         dynObject.teklaObject = tsObject;

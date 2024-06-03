@@ -84,7 +84,7 @@ public class LineSegment : ICurve, IEquatable<ICurve>
         teklaObject = TSActivator.CreateInstance("Tekla.Structures.Geometry3d.LineSegment");
     }
     
-    public LineSegment(dynamic tsObject, System.DateTime nonConflictParameter)
+    public LineSegment(dynamic tsObject, DateTime nonConflictParameter)
     {
         teklaObject = tsObject;
     }
