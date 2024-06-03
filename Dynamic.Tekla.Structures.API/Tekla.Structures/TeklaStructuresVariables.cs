@@ -1,32 +1,33 @@
 ﻿using Dynamic.Tekla.Structures.Internal.Invoker;
+using System;
 
 namespace Dynamic.Tekla.Structures;
 public abstract class TeklaStructuresVariables
 {
     internal dynamic teklaObject;
 
-    public static System.String PourManagementOptionName
+    public static string PourManagementOptionName
     {
         get
         {
             var value = PropertyInvoker.GetStaticPropertyOrFieldValue("Tekla.Structures.TeklaStructuresVariables", "PourManagementOptionName");
-            return (System.String)value;
+            return (string)value;
         }
 
     }
 
-    public static void Add(System.String key)
+    public static void Add(string key)
     {
         MethodInvoker.InvokeStaticMethod("Tekla.Structures.TeklaStructuresVariables", "Add", key);
     }
 
-    public static System.String Get(System.String key)
+    public static string Get(string key)
     {
-        var result = (System.String)MethodInvoker.InvokeStaticMethod("Tekla.Structures.TeklaStructuresVariables", "Get", key);
+        var result = (string)MethodInvoker.InvokeStaticMethod("Tekla.Structures.TeklaStructuresVariables", "Get", key);
         return result;
     }
 
-    public static bool ContainsVariable(System.String key)
+    public static bool ContainsVariable(string key)
     {
         var result = (bool)MethodInvoker.InvokeStaticMethod("Tekla.Structures.TeklaStructuresVariables", "ContainsVariable", key);
         return result;

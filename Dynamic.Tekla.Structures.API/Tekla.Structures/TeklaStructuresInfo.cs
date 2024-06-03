@@ -21,73 +21,73 @@ public sealed class TeklaStructuresInfo
     {
         teklaObject = tsObject;
     }
-    public static System.String GetCurrentProgramVersion()
+    public static string GetCurrentProgramVersion()
     {
-        var result = (System.String)MethodInvoker.InvokeStaticMethod("Tekla.Structures.TeklaStructuresInfo", "GetCurrentProgramVersion");
+        var result = (string)MethodInvoker.InvokeStaticMethod("Tekla.Structures.TeklaStructuresInfo", "GetCurrentProgramVersion");
         return result;
     }
 
 
 
-    public static System.String GetBuildNumber()
+    public static string GetBuildNumber()
     {
-        var result = (System.String)MethodInvoker.InvokeStaticMethod("Tekla.Structures.TeklaStructuresInfo", "GetBuildNumber");
+        var result = (string)MethodInvoker.InvokeStaticMethod("Tekla.Structures.TeklaStructuresInfo", "GetBuildNumber");
         return result;
     }
 
 
 
-    public static System.String GetRevisionDate()
+    public static string GetRevisionDate()
     {
-        var result = (System.String)MethodInvoker.InvokeStaticMethod("Tekla.Structures.TeklaStructuresInfo", "GetRevisionDate");
+        var result = (string)MethodInvoker.InvokeStaticMethod("Tekla.Structures.TeklaStructuresInfo", "GetRevisionDate");
         return result;
     }
 
 
 
-    public static System.String GetCopyRightText()
+    public static string GetCopyRightText()
     {
-        var result = (System.String)MethodInvoker.InvokeStaticMethod("Tekla.Structures.TeklaStructuresInfo", "GetCopyRightText");
+        var result = (string)MethodInvoker.InvokeStaticMethod("Tekla.Structures.TeklaStructuresInfo", "GetCopyRightText");
         return result;
     }
 
 
 
-    public static System.String GetLocalAppDataFolder()
+    public static string GetLocalAppDataFolder()
     {
-        var result = (System.String)MethodInvoker.InvokeStaticMethod("Tekla.Structures.TeklaStructuresInfo", "GetLocalAppDataFolder");
+        var result = (string)MethodInvoker.InvokeStaticMethod("Tekla.Structures.TeklaStructuresInfo", "GetLocalAppDataFolder");
         return result;
     }
 
 
 
-    public static System.String GetCommonAppDataFolder()
+    public static string GetCommonAppDataFolder()
     {
-        var result = (System.String)MethodInvoker.InvokeStaticMethod("Tekla.Structures.TeklaStructuresInfo", "GetCommonAppDataFolder");
+        var result = (string)MethodInvoker.InvokeStaticMethod("Tekla.Structures.TeklaStructuresInfo", "GetCommonAppDataFolder");
         return result;
     }
 
 
 
-    public static System.String GetFullTSRegistryKeyText()
+    public static string GetFullTSRegistryKeyText()
     {
-        var result = (System.String)MethodInvoker.InvokeStaticMethod("Tekla.Structures.TeklaStructuresInfo", "GetFullTSRegistryKeyText");
+        var result = (string)MethodInvoker.InvokeStaticMethod("Tekla.Structures.TeklaStructuresInfo", "GetFullTSRegistryKeyText");
         return result;
     }
 
 
 
-    public static System.String GetCurrentUser()
+    public static string GetCurrentUser()
     {
-        var result = (System.String)MethodInvoker.InvokeStaticMethod("Tekla.Structures.TeklaStructuresInfo", "GetCurrentUser");
+        var result = (string)MethodInvoker.InvokeStaticMethod("Tekla.Structures.TeklaStructuresInfo", "GetCurrentUser");
         return result;
     }
 
 
 
-    public static System.String GetPluginsFolder()
+    public static string GetPluginsFolder()
     {
-        var result = (System.String)MethodInvoker.InvokeStaticMethod("Tekla.Structures.TeklaStructuresInfo", "GetPluginsFolder");
+        var result = (string)MethodInvoker.InvokeStaticMethod("Tekla.Structures.TeklaStructuresInfo", "GetPluginsFolder");
         return result;
     }
 }

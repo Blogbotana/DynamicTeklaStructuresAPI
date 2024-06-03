@@ -20,7 +20,7 @@ public sealed class TeklaStructuresSettings
     {
         teklaObject = tsObject;
     }
-    public static bool GetAdvancedOption(System.String VariableName, ref bool Value)
+    public static bool GetAdvancedOption(string VariableName, ref bool Value)
     {
         var result = (bool)MethodInvoker.InvokeStaticMethod("Tekla.Structures.TeklaStructuresSettings", "GetAdvancedOption", VariableName, ref Value);
         return result;
@@ -28,7 +28,7 @@ public sealed class TeklaStructuresSettings
 
 
 
-    public static bool GetAdvancedOption(System.String VariableName, ref System.Int32 Value)
+    public static bool GetAdvancedOption(string VariableName, ref System.Int32 Value)
     {
         var result = (bool)MethodInvoker.InvokeStaticMethod("Tekla.Structures.TeklaStructuresSettings", "GetAdvancedOption", VariableName, ref Value);
         return result;
@@ -36,7 +36,7 @@ public sealed class TeklaStructuresSettings
 
 
 
-    public static bool GetAdvancedOption(System.String VariableName, ref System.String Value)
+    public static bool GetAdvancedOption(string VariableName, ref string Value)
     {
         var result = (bool)MethodInvoker.InvokeStaticMethod("Tekla.Structures.TeklaStructuresSettings", "GetAdvancedOption", VariableName, ref Value);
         return result;
@@ -44,7 +44,7 @@ public sealed class TeklaStructuresSettings
 
 
 
-    public static bool GetAdvancedOption(System.String VariableName, ref double Value)
+    public static bool GetAdvancedOption(string VariableName, ref double Value)
     {
         var result = (bool)MethodInvoker.InvokeStaticMethod("Tekla.Structures.TeklaStructuresSettings", "GetAdvancedOption", VariableName, ref Value);
         return result;
@@ -90,7 +90,7 @@ public sealed class TeklaStructuresSettings
 
 
 
-    public static bool IsToolOptionOn(System.String toolOptionName)
+    public static bool IsToolOptionOn(string toolOptionName)
     {
         var result = (bool)MethodInvoker.InvokeStaticMethod("Tekla.Structures.TeklaStructuresSettings", "IsToolOptionOn", toolOptionName);
         return result;

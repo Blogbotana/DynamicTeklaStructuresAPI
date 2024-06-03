@@ -1,4 +1,6 @@
-﻿namespace Dynamic.Tekla.Structures.Internal.Invoker;
+﻿using System.Collections.Generic;
+
+namespace Dynamic.Tekla.Structures.Internal.Invoker;
 
 public static class MethodInvoker
 {
