@@ -539,7 +539,7 @@ public class BasePoint
         args[14] = angleToNorth;
         args[15] = isProjectBasePoint;
         args[16] = isCurrentBasePoint;
-        this.teklaObject = TSActivator.CreateInstance("Tekla.Structures.Model.BasePoint", args);
+        teklaObject = TSActivator.CreateInstance("Tekla.Structures.Model.BasePoint", args);
     }
     public bool Insert()
     {
@@ -738,7 +738,7 @@ internal static class BasePoint_
     {
         if (tsObject is null) return null;
         var typeName = "Dynamic." + tsObject.GetType().FullName;
-        var type = Assembly.GetExecutingAssembly().GetType(typeName);
+        var type = System.Reflection.Assembly.GetExecutingAssembly().GetType(typeName);
 
         var parameters = new object[2];
         parameters[0] = tsObject;

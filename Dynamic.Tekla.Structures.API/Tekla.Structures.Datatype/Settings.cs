@@ -25,13 +25,13 @@ public class Settings
         return result;
     }
 
-    public static System.Boolean TryGetValue(string name, out System.Object obj)
+    public static bool TryGetValue(string name, out System.Object obj)
     {
         obj = null;
-        var result = (System.Boolean)MethodInvoker.InvokeStaticMethod("Tekla.Structures.Datatype.Settings", "TryGetValue", name, ref obj);
+        var result = (bool)MethodInvoker.InvokeStaticMethod("Tekla.Structures.Datatype.Settings", "TryGetValue", name, ref obj);
         return result;
     }
-    public static System.Boolean TryGetValue<T>(string name, out T obj)
+    public static bool TryGetValue<T>(string name, out T obj)
     {
         obj = default(T);
         if (TryGetValue(name, out var value) && value is T)

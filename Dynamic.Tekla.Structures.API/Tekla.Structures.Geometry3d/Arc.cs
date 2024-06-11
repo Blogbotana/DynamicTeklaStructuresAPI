@@ -157,7 +157,7 @@ public class Arc : ICurve, IEquatable<ICurve>
         return false;
     }
 
-    internal dynamic teklaObject;
+    public dynamic teklaObject { get; set; }
 
     internal Arc() { }
     public Arc(dynamic tsObject, DateTime nonConflictParameter)

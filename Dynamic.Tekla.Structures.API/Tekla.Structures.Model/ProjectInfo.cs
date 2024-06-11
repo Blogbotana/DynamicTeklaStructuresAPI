@@ -549,7 +549,7 @@ public sealed class ProjectInfo
     
     public ProjectInfo(dynamic tsObject, DateTime nonConflictParameter)
     {
-        this.teklaObject = tsObject;
+        teklaObject = tsObject;
     }
     public bool Modify()
     {
@@ -751,47 +751,47 @@ public sealed class ProjectInfo
 
 
 
-    public static List<Dynamic.Tekla.Structures.Model.BasePoint> GetBasePoints()
+    public static List<BasePoint> GetBasePoints()
     {
         var result = MethodInvoker.InvokeStaticMethod("Tekla.Structures.Model.ProjectInfo", "GetBasePoints");
-        var _result = ListConverter.FromTSObjects<Dynamic.Tekla.Structures.Model.BasePoint>(result);
+        var _result = ListConverter.FromTSObjects<BasePoint>(result);
         return _result;
     }
-    public static Dynamic.Tekla.Structures.Model.BasePoint GetBasePointByName(
+    public static BasePoint GetBasePointByName(
             string name)
     {
         var result = MethodInvoker.InvokeStaticMethod("Tekla.Structures.Model.ProjectInfo", "GetBasePointByName", name);
-        var _result = Dynamic.Tekla.Structures.Model.BasePoint_.FromTSObject(result);
+        var _result = BasePoint_.FromTSObject(result);
         return _result;
     }
 
-    public static Dynamic.Tekla.Structures.Model.BasePoint GetBasePointByGuid(
+    public static BasePoint GetBasePointByGuid(
             Guid guid)
     {
         var result = MethodInvoker.InvokeStaticMethod("Tekla.Structures.Model.ProjectInfo", "GetBasePointByGuid", guid);
-        var _result = Dynamic.Tekla.Structures.Model.BasePoint_.FromTSObject(result);
+        var _result = BasePoint_.FromTSObject(result);
         return _result;
     }
 
-    public static Dynamic.Tekla.Structures.Model.BasePoint GetCurrentCoordsysBasePoint()
+    public static BasePoint GetCurrentCoordsysBasePoint()
     {
         var result = MethodInvoker.InvokeStaticMethod("Tekla.Structures.Model.ProjectInfo", "GetCurrentCoordsysBasePoint");
-        var _result = Dynamic.Tekla.Structures.Model.BasePoint_.FromTSObject(result);
+        var _result = BasePoint_.FromTSObject(result);
         return _result;
     }
 
     public static bool SetCurrentCoordsysToBasePoint(
-            Dynamic.Tekla.Structures.Model.BasePoint basePoint_)
+            BasePoint basePoint_)
     {
-        var basePoint = Dynamic.Tekla.Structures.Model.BasePoint_.GetTSObject(basePoint_);
+        var basePoint = BasePoint_.GetTSObject(basePoint_);
         var result = (bool)MethodInvoker.InvokeStaticMethod("Tekla.Structures.Model.ProjectInfo", "SetCurrentCoordsysToBasePoint", basePoint);
         return result;
     }
 
-    public static Dynamic.Tekla.Structures.Model.BasePoint GetProjectBasePoint()
+    public static BasePoint GetProjectBasePoint()
     {
         var result = MethodInvoker.InvokeStaticMethod("Tekla.Structures.Model.ProjectInfo", "GetProjectBasePoint");
-        var _result = Dynamic.Tekla.Structures.Model.BasePoint_.FromTSObject(result);
+        var _result = BasePoint_.FromTSObject(result);
         return _result;
     }
 }
@@ -808,13 +808,13 @@ internal static class ProjectInfo_
     {
         if (tsObject is null) return null;
         var typeName = "Dynamic." + tsObject.GetType().FullName;
-        var type = Assembly.GetExecutingAssembly().GetType(typeName);
+        var type = System.Reflection.Assembly.GetExecutingAssembly().GetType(typeName);
 
         var parameters = new object[2];
         parameters[0] = tsObject;
         parameters[1] = new DateTime();
 
-        var dynObject = (Dynamic.Tekla.Structures.Model.ProjectInfo)Activator.CreateInstance(type, parameters);
+        var dynObject = (ProjectInfo)Activator.CreateInstance(type, parameters);
         dynObject.teklaObject = tsObject;
         return dynObject;
     }

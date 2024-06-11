@@ -28,7 +28,7 @@ public sealed class TeklaStructuresSettings
 
 
 
-    public static bool GetAdvancedOption(string VariableName, ref System.Int32 Value)
+    public static bool GetAdvancedOption(string VariableName, ref int Value)
     {
         var result = (bool)MethodInvoker.InvokeStaticMethod("Tekla.Structures.TeklaStructuresSettings", "GetAdvancedOption", VariableName, ref Value);
         return result;

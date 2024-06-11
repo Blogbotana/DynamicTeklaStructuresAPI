@@ -93,12 +93,12 @@ public class ModuleManager
 
     public ModuleManager()
     {
-        this.teklaObject = TSActivator.CreateInstance("Tekla.Structures.ModuleManager");
+        teklaObject = TSActivator.CreateInstance("Tekla.Structures.ModuleManager");
     }
-    //This constructor creates wrapper object using teklaObject. DateTime is never used but it is here to avoid conflicts with constructors with one argument
+    
     public ModuleManager(dynamic tsObject, DateTime nonConflictParameter)
     {
-        this.teklaObject = tsObject;
+        teklaObject = tsObject;
     }
 
     /// <summary> The configuration information of the program. </summary>

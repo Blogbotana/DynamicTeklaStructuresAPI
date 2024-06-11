@@ -35,7 +35,7 @@ public sealed class LoopEnumerator : IEnumerator
     
     public LoopEnumerator(dynamic tsObject, DateTime nonConflictParameter)
     {
-        this.teklaObject = tsObject;
+        teklaObject = tsObject;
     }
     public bool MoveNext()
     {

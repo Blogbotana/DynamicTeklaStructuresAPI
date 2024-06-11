@@ -80,19 +80,19 @@ public class AABB : IBoundingVolume
         var args = new object[2];
         args[0] = Point_.GetTSObject(MinPoint);
         args[1] = Point_.GetTSObject(MaxPoint);
-        this.teklaObject = TSActivator.CreateInstance("Tekla.Structures.Geometry3d.AABB", args);
+        teklaObject = TSActivator.CreateInstance("Tekla.Structures.Geometry3d.AABB", args);
     }
     public AABB(IEnumerable<Point> Points)
     {
         var args = new object[1];
         args[0] = Points;
-        this.teklaObject = TSActivator.CreateInstance("Tekla.Structures.Geometry3d.AABB", args);
+        teklaObject = TSActivator.CreateInstance("Tekla.Structures.Geometry3d.AABB", args);
     }
     public AABB(AABB AABB)
     {
         var args = new object[1];
         args[0] = AABB_.GetTSObject(AABB);
-        this.teklaObject = TSActivator.CreateInstance("Tekla.Structures.Geometry3d.AABB", args);
+        teklaObject = TSActivator.CreateInstance("Tekla.Structures.Geometry3d.AABB", args);
     }
 
 

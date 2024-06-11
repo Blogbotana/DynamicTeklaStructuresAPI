@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dynamic.Tekla.Structures.Tekla.Structures.Geometry3d;
+namespace Dynamic.Tekla.Structures.Geometry3d;
 public static class MatrixFactory
 {/// <summary>
  /// Returns a rotation matrix in a Clockwise rotation around the given rotation axis,

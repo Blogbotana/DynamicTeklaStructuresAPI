@@ -30,7 +30,7 @@ public sealed class ShellEnumerator : IEnumerator
    
     public ShellEnumerator(dynamic tsObject, DateTime nonConflictParameter)
     {
-        this.teklaObject = tsObject;
+        teklaObject = tsObject;
     }
     public bool MoveNext()
     {

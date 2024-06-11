@@ -35,7 +35,7 @@ public struct Boolean : IXmlSerializable, IDataType
     /// <param name="boolValue">The boolean value.</param>
     public Boolean(bool boolValue)
     {
-        this.boolValue = boolValue;
+        boolValue = boolValue;
     }
 
     /// <exclude />

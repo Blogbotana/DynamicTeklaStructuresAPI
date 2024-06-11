@@ -80,7 +80,7 @@ public class GeometricPlane
         var args = new object[2];
         args[0] = Point_.GetTSObject(Origin);
         args[1] = Vector_.GetTSObject(Normal);
-        this.teklaObject = TSActivator.CreateInstance("Tekla.Structures.Geometry3d.GeometricPlane", args);
+        teklaObject = TSActivator.CreateInstance("Tekla.Structures.Geometry3d.GeometricPlane", args);
     }
     public GeometricPlane(Point Origin, Vector Xaxis, Vector Yaxis)
     {
@@ -88,13 +88,13 @@ public class GeometricPlane
         args[0] = Point_.GetTSObject(Origin);
         args[1] = Vector_.GetTSObject(Xaxis);
         args[2] = Vector_.GetTSObject(Yaxis);
-        this.teklaObject = TSActivator.CreateInstance("Tekla.Structures.Geometry3d.GeometricPlane", args);
+        teklaObject = TSActivator.CreateInstance("Tekla.Structures.Geometry3d.GeometricPlane", args);
     }
     public GeometricPlane(CoordinateSystem CoordSys)
     {
         var args = new object[1];
         args[0] = CoordinateSystem_.GetTSObject(CoordSys);
-        this.teklaObject = TSActivator.CreateInstance("Tekla.Structures.Geometry3d.GeometricPlane", args);
+        teklaObject = TSActivator.CreateInstance("Tekla.Structures.Geometry3d.GeometricPlane", args);
     }
 
     /// <summary>

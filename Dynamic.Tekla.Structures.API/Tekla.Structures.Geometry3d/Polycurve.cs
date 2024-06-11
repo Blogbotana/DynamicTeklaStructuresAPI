@@ -97,22 +97,22 @@ public class Polycurve : IEnumerable<ICurve>, IEnumerable, ICurve, IEquatable<IC
         return false;
     }
 
-    internal dynamic teklaObject;
+    public dynamic teklaObject { get; set; }
 
     public Polycurve()
     {
-        this.teklaObject = TSActivator.CreateInstance("Tekla.Structures.Geometry3d.Polycurve");
+        teklaObject = TSActivator.CreateInstance("Tekla.Structures.Geometry3d.Polycurve");
     }
 
     public Polycurve(dynamic tsObject, DateTime nonConflictParameter)
     {
-        this.teklaObject = tsObject;
+        teklaObject = tsObject;
     }
     public Polycurve(Dynamic.Tekla.Structures.Geometry3d.PolyLine polyLine)
     {
         var args = new object[1];
         args[0] = Dynamic.Tekla.Structures.Geometry3d.PolyLine_.GetTSObject(polyLine);
-        this.teklaObject = TSActivator.CreateInstance("Tekla.Structures.Geometry3d.Polycurve", args);
+        teklaObject = TSActivator.CreateInstance("Tekla.Structures.Geometry3d.Polycurve", args);
     }
 }
 internal static class Polycurve_

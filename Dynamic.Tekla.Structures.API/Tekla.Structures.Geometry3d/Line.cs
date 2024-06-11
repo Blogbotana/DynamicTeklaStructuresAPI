@@ -76,7 +76,7 @@ public class Line
         var args = new object[2];
         args[0] = Point_.GetTSObject(p1);
         args[1] = Point_.GetTSObject(p2);
-        this.teklaObject = TSActivator.CreateInstance("Tekla.Structures.Geometry3d.Line", args);
+        teklaObject = TSActivator.CreateInstance("Tekla.Structures.Geometry3d.Line", args);
     }
     public Line(Point Point, Vector Direction)
     {

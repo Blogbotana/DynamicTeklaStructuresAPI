@@ -14,7 +14,7 @@ public sealed class Shell
     
     public Shell(dynamic tsObject, DateTime nonConflictParameter)
     {
-        this.teklaObject = tsObject;
+        teklaObject = tsObject;
     }
 
 

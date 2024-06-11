@@ -77,7 +77,7 @@ public class LineSegment : ICurve, IEquatable<ICurve>
     /// </summary>
     public Point EndPoint => Point2;
 
-    internal dynamic teklaObject;
+    public dynamic teklaObject { get; set; }
 
     public LineSegment()
     {
