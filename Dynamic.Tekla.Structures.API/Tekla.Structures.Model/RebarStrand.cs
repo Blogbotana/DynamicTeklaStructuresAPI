@@ -177,23 +177,6 @@ public  class RebarStrand  : Reinforcement
             }
         }
 
-        public System.Collections.ArrayList OnPlaneOffsets
-        {
-            get
-            {
-                try
-                {
-                var value = teklaObject.OnPlaneOffsets;
-                var value_ = ArrayListConverter.FromTSObjects(value);
-                return (System.Collections.ArrayList) value_;
-                }
-                catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
-                {
-                    throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(OnPlaneOffsets), ex); 
-                }
-            }
-            
-        }
         
 
         

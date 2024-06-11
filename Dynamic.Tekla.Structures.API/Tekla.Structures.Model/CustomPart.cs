@@ -37,7 +37,7 @@ public class CustomPart : BaseComponent, IAssemblable
         }
     }
 
-    public dynamic teklaObject { get => teklaObject; set => teklaObject = value; }
+    public dynamic teklaObject1 { get => teklaObject; set => teklaObject = value; }
 
     public CustomPart()
     {

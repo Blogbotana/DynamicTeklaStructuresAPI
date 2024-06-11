@@ -94,32 +94,6 @@ public abstract class BaseRebarGroup : Reinforcement
         }
     }
 
-    public double FromPlaneOffset
-    {
-        get
-        {
-            try
-            {
-                return teklaObject.FromPlaneOffset;
-            }
-            catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
-            {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(FromPlaneOffset), ex);
-            }
-        }
-        set
-        {
-            try
-            {
-                teklaObject.FromPlaneOffset = value;
-            }
-            catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
-            {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(FromPlaneOffset), ex);
-            }
-        }
-    }
-
     public double StartFromPlaneOffset
     {
         get

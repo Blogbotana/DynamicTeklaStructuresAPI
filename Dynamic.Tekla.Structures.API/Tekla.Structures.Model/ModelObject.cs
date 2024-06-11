@@ -568,7 +568,7 @@ public abstract class ModelObject : Object
     }
 
 
-    public int CompareTo(System.Object obj)
+    public int CompareTo(object obj)
     {
 
         try

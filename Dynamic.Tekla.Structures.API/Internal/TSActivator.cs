@@ -44,6 +44,9 @@ internal static class TSActivator
 
     private static object ConvertParameter(object input)
     {
+        if(input is null)
+            return null;
+
         var type = input.GetType();
         var typeFullName = type.ToString();
         object converted = null;

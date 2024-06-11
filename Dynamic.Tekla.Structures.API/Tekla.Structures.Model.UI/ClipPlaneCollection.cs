@@ -1,13 +1,13 @@
 using Dynamic.Tekla.Structures.Internal.Exceptions;
+using System;
 using System.Collections;
 
-namespace Dynamic.Tekla.Structures.Model;
+namespace Dynamic.Tekla.Structures.Model.UI;
 
-public class PhaseCollection
+
+public class ClipPlaneCollection : ICollection, IEnumerable
 {
-
-
-    public int Count
+    public System.Int32 Count
     {
         get
         {
@@ -23,7 +23,7 @@ public class PhaseCollection
 
     }
 
-    public bool IsSynchronized
+    public System.Boolean IsSynchronized
     {
         get
         {
@@ -58,13 +58,40 @@ public class PhaseCollection
 
     internal dynamic teklaObject;
 
-    internal PhaseCollection() { }
-
-    public PhaseCollection(dynamic tsObject, System.DateTime nonConflictParameter)
+    internal ClipPlaneCollection() { }
+    //This constructor creates wrapper object using teklaObject. DateTime is never used but it is here to avoid conflicts with constructors with one argument
+    public ClipPlaneCollection(dynamic tsObject, System.DateTime nonConflictParameter)
     {
-        teklaObject = tsObject;
+        this.teklaObject = tsObject;
     }
 
+    public void CopyTo(Array array, int index)
+    {
+        if (array == null)
+        {
+            return;
+        }
+        IEnumerator enumerator = GetEnumerator();
+        try
+        {
+            while (enumerator.MoveNext())
+            {
+                ClipPlane clipPlane = (ClipPlane)enumerator.Current;
+                if (clipPlane != null && index < array.Length)
+                {
+                    array.SetValue(clipPlane, index++);
+                }
+            }
+        }
+        finally
+        {
+            IDisposable disposable = enumerator as IDisposable;
+            if (disposable != null)
+            {
+                disposable.Dispose();
+            }
+        }
+    }
 
     public IEnumerator GetEnumerator()
     {
@@ -80,21 +107,15 @@ public class PhaseCollection
     }
 }
 
-
-
-
-
-    }
-
-    internal static class PhaseCollection_
+internal static class ClipPlaneCollection_
 {
-    public static dynamic GetTSObject(PhaseCollection dynObject)
+    public static dynamic GetTSObject(ClipPlaneCollection dynObject)
     {
         if (dynObject is null) return null;
         return dynObject.teklaObject;
     }
 
-    public static PhaseCollection FromTSObject(dynamic tsObject)
+    public static ClipPlaneCollection FromTSObject(dynamic tsObject)
     {
         if (tsObject is null) return null;
         var typeName = "Dynamic." + tsObject.GetType().FullName;
@@ -104,37 +125,34 @@ public class PhaseCollection
         parameters[0] = tsObject;
         parameters[1] = new System.DateTime();
 
-        var dynObject = (PhaseCollection)System.Activator.CreateInstance(type, parameters);
+        var dynObject = (Dynamic.Tekla.Structures.Model.UI.ClipPlaneCollection)System.Activator.CreateInstance(type, parameters);
         dynObject.teklaObject = tsObject;
         return dynObject;
     }
 }
 
-internal static class PhaseCollectionArray_
+internal static class ClipPlaneCollectionArray_
 {
-    public static dynamic GetTSObject(PhaseCollection[] dynArray)
+    public static dynamic GetTSObject(ClipPlaneCollection[] dynArray)
     {
         if (dynArray is null) return null;
         var list = new System.Collections.Generic.List<dynamic>();
         foreach (var dynItem in dynArray)
         {
-            list.Add(PhaseCollection_.GetTSObject(dynItem));
+            list.Add(ClipPlaneCollection_.GetTSObject(dynItem));
         }
         return list.ToArray();
     }
 
-    public static PhaseCollection[] FromTSObject(dynamic[] tsArray)
+    public static ClipPlaneCollection[] FromTSObject(dynamic[] tsArray)
     {
         if (tsArray is null) return null;
-        var list = new System.Collections.Generic.List<PhaseCollection>();
+        var list = new System.Collections.Generic.List<ClipPlaneCollection>();
         foreach (var tsItem in tsArray)
         {
-            list.Add(PhaseCollection_.FromTSObject(tsItem));
+            list.Add(ClipPlaneCollection_.FromTSObject(tsItem));
         }
         return list.ToArray();
     }
 }
-
-
-
 

@@ -1,9 +1,12 @@
+using Dynamic.Tekla.Structures.Geometry3d;
 using Dynamic.Tekla.Structures.Internal;
 using Dynamic.Tekla.Structures.Internal.Converters;
 using Dynamic.Tekla.Structures.Internal.Exceptions;
+using Dynamic.Tekla.Structures.Solid;
+using System.Collections;
 
 namespace Dynamic.Tekla.Structures.Model;
-public sealed class Solid
+public sealed class Solid : ISolid
 {
 
 
@@ -187,9 +190,39 @@ public sealed class Solid
         }
     }
 
+    public IEnumerator IntersectAllFaces(Point point1_, Point point2_, Point point3_)
+    {
+        var point1 = Point_.GetTSObject(point1_);
+        var point2 = Point_.GetTSObject(point2_);
+        var point3 = Point_.GetTSObject(point3_);
+        try
+        {
+            var result = (IEnumerator)teklaObject.IntersectAllFaces(point1, point2, point3);
 
+            return result;
+        }
+        catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
+        {
+            throw DynamicAPINotFoundException.CouldNotFindMethod(nameof(IsValid), ex);
+        }
+    }
 
+    public IEnumerator GetAllIntersectionPoints(Point point1_, Point point2_, Point point3_)
+    {
+        var point1 = Point_.GetTSObject(point1_);
+        var point2 = Point_.GetTSObject(point2_);
+        var point3 = Point_.GetTSObject(point3_);
+        try
+        {
+            var result = (IEnumerator)teklaObject.GetAllIntersectionPoints(point1, point2, point3);
 
+            return result;
+        }
+        catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
+        {
+            throw DynamicAPINotFoundException.CouldNotFindMethod(nameof(IsValid), ex);
+        }
+    }
 
     public enum SolidCreationTypeEnum
     {

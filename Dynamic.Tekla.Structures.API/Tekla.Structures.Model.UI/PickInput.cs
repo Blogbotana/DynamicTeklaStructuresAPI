@@ -1,13 +1,15 @@
 using Dynamic.Tekla.Structures.Internal.Exceptions;
+using System;
 using System.Collections;
 
-namespace Dynamic.Tekla.Structures.Model;
+namespace Dynamic.Tekla.Structures.Model.UI;
 
-public class PhaseCollection
+
+public class PickInput : ICollection, IEnumerable
 {
 
 
-    public int Count
+    public System.Int32 Count
     {
         get
         {
@@ -23,7 +25,7 @@ public class PhaseCollection
 
     }
 
-    public bool IsSynchronized
+    public System.Boolean IsSynchronized
     {
         get
         {
@@ -58,13 +60,12 @@ public class PhaseCollection
 
     internal dynamic teklaObject;
 
-    internal PhaseCollection() { }
-
-    public PhaseCollection(dynamic tsObject, System.DateTime nonConflictParameter)
+    internal PickInput() { }
+    //This constructor creates wrapper object using teklaObject. DateTime is never used but it is here to avoid conflicts with constructors with one argument
+    public PickInput(dynamic tsObject, System.DateTime nonConflictParameter)
     {
-        teklaObject = tsObject;
+        this.teklaObject = tsObject;
     }
-
 
     public IEnumerator GetEnumerator()
     {
@@ -78,23 +79,45 @@ public class PhaseCollection
             throw DynamicAPINotFoundException.CouldNotFindMethod(nameof(GetEnumerator), ex);
         }
     }
+
+    public void CopyTo(Array array, int index)
+    {
+        if (array == null)
+        {
+            return;
+        }
+        IEnumerator enumerator = GetEnumerator();
+        try
+        {
+            while (enumerator.MoveNext())
+            {
+                InputItem inputItem = (InputItem)enumerator.Current;
+                if (inputItem != null && index < array.Length)
+                {
+                    array.SetValue(inputItem, index++);
+                }
+            }
+        }
+        finally
+        {
+            IDisposable disposable = enumerator as IDisposable;
+            if (disposable != null)
+            {
+                disposable.Dispose();
+            }
+        }
+    }
 }
 
-
-
-
-
-    }
-
-    internal static class PhaseCollection_
+internal static class PickInput_
 {
-    public static dynamic GetTSObject(PhaseCollection dynObject)
+    public static dynamic GetTSObject(PickInput dynObject)
     {
         if (dynObject is null) return null;
         return dynObject.teklaObject;
     }
 
-    public static PhaseCollection FromTSObject(dynamic tsObject)
+    public static PickInput FromTSObject(dynamic tsObject)
     {
         if (tsObject is null) return null;
         var typeName = "Dynamic." + tsObject.GetType().FullName;
@@ -104,37 +127,34 @@ public class PhaseCollection
         parameters[0] = tsObject;
         parameters[1] = new System.DateTime();
 
-        var dynObject = (PhaseCollection)System.Activator.CreateInstance(type, parameters);
+        var dynObject = (Dynamic.Tekla.Structures.Model.UI.PickInput)System.Activator.CreateInstance(type, parameters);
         dynObject.teklaObject = tsObject;
         return dynObject;
     }
 }
 
-internal static class PhaseCollectionArray_
+internal static class PickInputArray_
 {
-    public static dynamic GetTSObject(PhaseCollection[] dynArray)
+    public static dynamic GetTSObject(PickInput[] dynArray)
     {
         if (dynArray is null) return null;
         var list = new System.Collections.Generic.List<dynamic>();
         foreach (var dynItem in dynArray)
         {
-            list.Add(PhaseCollection_.GetTSObject(dynItem));
+            list.Add(PickInput_.GetTSObject(dynItem));
         }
         return list.ToArray();
     }
 
-    public static PhaseCollection[] FromTSObject(dynamic[] tsArray)
+    public static PickInput[] FromTSObject(dynamic[] tsArray)
     {
         if (tsArray is null) return null;
-        var list = new System.Collections.Generic.List<PhaseCollection>();
+        var list = new System.Collections.Generic.List<PickInput>();
         foreach (var tsItem in tsArray)
         {
-            list.Add(PhaseCollection_.FromTSObject(tsItem));
+            list.Add(PickInput_.FromTSObject(tsItem));
         }
         return list.ToArray();
     }
 }
-
-
-
 

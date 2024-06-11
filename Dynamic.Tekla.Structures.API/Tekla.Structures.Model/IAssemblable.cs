@@ -11,7 +11,7 @@ public interface IAssemblable
     /// </summary>
     /// <returns>The assembly that the assemblable belongs to.</returns>
     Assembly GetAssembly();
-    dynamic teklaObject { get; set; }
+    dynamic teklaObject1 { get; set; }
 }
 
 internal static class IAssemblable_
@@ -19,7 +19,7 @@ internal static class IAssemblable_
     public static dynamic GetTSObject(IAssemblable dynObject)
     {
         if (dynObject is null) return null;
-        return dynObject.teklaObject;
+        return dynObject.teklaObject1;
     }
 
     public static IAssemblable FromTSObject(dynamic tsObject)
@@ -33,7 +33,7 @@ internal static class IAssemblable_
         parameters[1] = new System.DateTime();
 
         var dynObject = (Dynamic.Tekla.Structures.Model.IAssemblable)System.Activator.CreateInstance(type, parameters);
-        dynObject.teklaObject = tsObject;
+        dynObject.teklaObject1 = tsObject;
         return dynObject;
     }
 }

@@ -39,7 +39,7 @@ public  class ComponentInput
         
     }
 
-    public System.Object SyncRoot
+    public object SyncRoot
     {
         get
         {

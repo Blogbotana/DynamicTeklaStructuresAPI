@@ -21,28 +21,6 @@ namespace Dynamic.Tekla.Structures.Model;
 public class ConicalSurfaceNode : BendSurfaceNode
 {
 
-
-    public ConicalSurface Surface
-    {
-        get
-        {
-            try
-            {
-                var value = teklaObject.Surface;
-                var value_ = ConicalSurface_.FromTSObject(value);
-                return (ConicalSurface)value_;
-            }
-            catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
-            {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(Surface), ex);
-            }
-        }
-
-    }
-
-
-
-
     internal ConicalSurfaceNode() { }
 
     public ConicalSurfaceNode(dynamic tsObject, System.DateTime nonConflictParameter)

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Dynamic.Tekla.Structures.Model;
 public abstract class Reinforcement : ModelObject, IAssemblable
 {
-    public new dynamic teklaObject { get => teklaObject; set => teklaObject = value; }
+    public dynamic teklaObject1 { get => teklaObject; set => teklaObject = value; }
 
     public ModelObject Father
     {

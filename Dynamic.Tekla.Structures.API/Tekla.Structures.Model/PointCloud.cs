@@ -411,40 +411,40 @@ public class PointCloud
 
 
 
-    //public bool SetVisibility(
-    //    System.Collections.Generic.List<UI.View> views_,
-    //    bool visible)
-    //{
-    //    var views = ListConverter.ToTSObjects(views_);
-    //    try
-    //    {
-    //        var result = (bool)teklaObject.SetVisibility(views, visible);
+    public bool SetVisibility(
+        System.Collections.Generic.List<UI.View> views_,
+        bool visible)
+    {
+        var views = ListConverter.ToTSObjects(views_);
+        try
+        {
+            var result = (bool)teklaObject.SetVisibility(views, visible);
 
-    //        return result;
-    //    }
-    //    catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
-    //    {
-    //        throw DynamicAPINotFoundException.CouldNotFindMethod(nameof(SetVisibility), ex);
-    //    }
-    //}
+            return result;
+        }
+        catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
+        {
+            throw DynamicAPINotFoundException.CouldNotFindMethod(nameof(SetVisibility), ex);
+        }
+    }
 
 
 
-    //public System.Collections.Generic.List<UI.View> GetVisibleInViews()
-    //{
+    public System.Collections.Generic.List<UI.View> GetVisibleInViews()
+    {
 
-    //    try
-    //    {
-    //        var result = teklaObject.GetVisibleInViews();
+        try
+        {
+            var result = teklaObject.GetVisibleInViews();
 
-    //        var _result = ListConverter.FromTSObjects<UI.View>(result);
-    //        return _result;
-    //    }
-    //    catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
-    //    {
-    //        throw DynamicAPINotFoundException.CouldNotFindMethod(nameof(GetVisibleInViews), ex);
-    //    }
-    //}
+            var _result = ListConverter.FromTSObjects<UI.View>(result);
+            return _result;
+        }
+        catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
+        {
+            throw DynamicAPINotFoundException.CouldNotFindMethod(nameof(GetVisibleInViews), ex);
+        }
+    }
 
 
 

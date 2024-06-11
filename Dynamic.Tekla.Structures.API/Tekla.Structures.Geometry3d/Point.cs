@@ -1,13 +1,12 @@
 using Dynamic.Tekla.Structures.Internal;
 using Dynamic.Tekla.Structures.Internal.Exceptions;
-using Dynamic.Tekla.Structures.Internal.Invoker;
 using System;
 
 namespace Dynamic.Tekla.Structures.Geometry3d;
 /// <summary>
 /// The Point class represents a single position in 3D space.
 /// </summary>
-public class Point
+public class Point : IComparable
 {
     public double X
     {
@@ -124,61 +123,53 @@ public class Point
 
     public void Zero()
     {
-        try
-        {
-            teklaObject.Zero();
-        }
-        catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
-        {
-            throw DynamicAPINotFoundException.CouldNotFindMethod(nameof(Zero), ex);
-        }
+        X = 0.0;
+        Y = 0.0;
+        Z = 0.0;
     }
-    public void Translate(
-            double X,
-            double Y,
-            double Z)
+    public virtual void Translate(double X, double Y, double Z)
     {
-
-        try
-        {
-            teklaObject.Translate(X, Y, Z);
-
-
-        }
-        catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
-        {
-            throw DynamicAPINotFoundException.CouldNotFindMethod(nameof(Translate), ex);
-        }
+        this.X += X;
+        this.Y += Y;
+        this.Z += Z;
     }
 
-
-
-    public static bool AreEqual(
-            Point Point1_,
-            Point Point2_)
+    public static bool AreEqual(Point Point1, Point Point2)
     {
-        dynamic Point1 = Point_.GetTSObject(Point1_);
-        dynamic Point2 = Point_.GetTSObject(Point2_);
-        bool result = (bool)MethodInvoker.InvokeStaticMethod("Tekla.Structures.Geometry3d.Point", "AreEqual", Point1, Point2);
+        bool result = false;
+        if (Point1 != null && Point2 != null)
+        {
+            result = Math.Abs(Point1.X - Point2.X) < 0.0001 && Math.Abs(Point1.Y - Point2.Y) < 0.0001 && Math.Abs(Point1.Z - Point2.Z) < 0.0001;
+        }
         return result;
     }
-
-
-
-    public int CompareTo(
-            object obj)
+    public int CompareTo(object obj)
     {
-
-        try
+        if (obj == null)
         {
-            int result = (int)teklaObject.CompareTo(obj);
-
-            return result;
+            return 1;
         }
-        catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
+        Point point = obj as Point;
+        if (point != null)
         {
-            throw DynamicAPINotFoundException.CouldNotFindMethod(nameof(CompareTo), ex);
+            if (Equals(obj))
+            {
+                return 0;
+            }
+            if (X.CompareTo(point.X) < 0)
+            {
+                return -1;
+            }
+            if (X.CompareTo(point.X) == 0 && Y.CompareTo(point.Y) < 0)
+            {
+                return -1;
+            }
+            if (X.CompareTo(point.X) == 0 && Y.CompareTo(point.Y) == 0 && Z.CompareTo(point.Z) < 0)
+            {
+                return -1;
+            }
         }
+        return 1;
     }
 
 
@@ -211,13 +202,40 @@ public class Point
     {
         return !(p1 == p2);
     }
+    public override bool Equals(object obj)
+    {
+        if (obj == null || GetType() != obj.GetType())
+        {
+            return false;
+        }
+        Point point = (Point)obj;
+        return this == point;
+    }
+    public override int GetHashCode()
+    {
+        int num = 0;
+        num = HASH_SEED * (num ^ (int)(X + 0.501)) + 1;
+        num = HASH_SEED * (num ^ (int)(Y + 0.501)) + 1;
+        return HASH_SEED * (num ^ (int)(Z + 0.501)) + 1;
+    }
+    public override string ToString()
+    {
+        return $"({X:0.000}, {Y:0.000}, {Z:0.000})";
+    }
 }
 
 internal static class Point_
 {
     public static dynamic GetTSObject(Point dynObject)
     {
-        return dynObject is null ? null : dynObject.teklaObject;
+        if (dynObject is null)
+            return null;
+        
+
+        dynObject.teklaObject.X = dynObject.X;
+        dynObject.teklaObject.Y = dynObject.Y;
+        dynObject.teklaObject.Z = dynObject.Z;
+        return dynObject.teklaObject;
     }
 
     public static Point FromTSObject(dynamic tsObject)

@@ -52,6 +52,22 @@ public sealed class Face
     {
         teklaObject = tsObject;
     }
+    public Dynamic.Tekla.Structures.Solid.LoopEnumerator GetLoopEnumerator()
+    {
+
+        try
+        {
+            var result = teklaObject.GetLoopEnumerator();
+
+            var _result = Dynamic.Tekla.Structures.Solid.LoopEnumerator_.FromTSObject(result);
+            return _result;
+        }
+        catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
+        {
+            throw DynamicAPINotFoundException.CouldNotFindMethod(nameof(GetLoopEnumerator), ex);
+        }
+    }
+
 }
 internal static class Face_
 {

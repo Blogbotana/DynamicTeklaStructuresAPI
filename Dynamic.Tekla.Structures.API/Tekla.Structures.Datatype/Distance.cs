@@ -238,7 +238,7 @@ public struct Distance : IXmlSerializable, IEquatable<Distance>, IComparable<Dis
     /// <param name="millimeters">The distance in millimeters.</param>
     public Distance(double millimeters)
     {
-        millimeters = millimeters;
+        this.millimeters = millimeters;
     }
 
     /// <summary>

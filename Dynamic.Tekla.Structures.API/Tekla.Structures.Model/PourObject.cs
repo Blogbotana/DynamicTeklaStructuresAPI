@@ -113,7 +113,7 @@ public class PourObject : ModelObject, IAssemblable
         }
     }
 
-    public dynamic teklaObject { get => teklaObject; set => teklaObject = value; }
+    public dynamic teklaObject1 { get => teklaObject; set => teklaObject = value; }
 
     public PourObject()
     {

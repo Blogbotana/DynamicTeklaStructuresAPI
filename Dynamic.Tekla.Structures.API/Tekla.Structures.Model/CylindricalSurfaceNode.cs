@@ -9,24 +9,6 @@ namespace Dynamic.Tekla.Structures.Model;
 
 public class CylindricalSurfaceNode : BendSurfaceNode
 {
-    public CylindricalSurface Surface
-    {
-        get
-        {
-            try
-            {
-                var value = teklaObject.Surface;
-                var value_ = CylindricalSurface_.FromTSObject(value);
-                return (CylindricalSurface)value_;
-            }
-            catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
-            {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(Surface), ex);
-            }
-        }
-
-    }
-
     internal CylindricalSurfaceNode() { }
 
     public CylindricalSurfaceNode(dynamic tsObject, System.DateTime nonConflictParameter)

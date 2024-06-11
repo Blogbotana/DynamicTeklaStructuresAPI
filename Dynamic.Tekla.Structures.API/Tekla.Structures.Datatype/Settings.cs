@@ -19,13 +19,13 @@ public class Settings
     {
         teklaObject = tsObject;
     }
-    public static System.Object GetValue(string name)
+    public static object GetValue(string name)
     {
-        var result = (System.Object)MethodInvoker.InvokeStaticMethod("Tekla.Structures.Datatype.Settings", "GetValue", name);
+        var result = (object)MethodInvoker.InvokeStaticMethod("Tekla.Structures.Datatype.Settings", "GetValue", name);
         return result;
     }
 
-    public static bool TryGetValue(string name, out System.Object obj)
+    public static bool TryGetValue(string name, out object obj)
     {
         obj = null;
         var result = (bool)MethodInvoker.InvokeStaticMethod("Tekla.Structures.Datatype.Settings", "TryGetValue", name, ref obj);
@@ -42,7 +42,7 @@ public class Settings
         return false;
     }
 
-    public static void SetValue(string name, System.Object value)
+    public static void SetValue(string name, object value)
     {
         MethodInvoker.InvokeStaticMethod("Tekla.Structures.Datatype.Settings", "SetValue", name, value);
 

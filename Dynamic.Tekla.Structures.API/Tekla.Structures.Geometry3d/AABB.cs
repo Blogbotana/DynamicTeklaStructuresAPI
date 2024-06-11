@@ -71,6 +71,7 @@ public class AABB : IBoundingVolume
         teklaObject = TSActivator.CreateInstance("Tekla.Structures.Geometry3d.AABB");
     }
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0060:Remove unused parameter", Justification = "<Pending>")]
     public AABB(dynamic tsObject, DateTime nonConflictParameter)
     {
         teklaObject = tsObject;

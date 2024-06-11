@@ -61,7 +61,13 @@ public class Polycurve : IEnumerable<ICurve>, IEnumerable, ICurve, IEquatable<IC
     {
         try
         {
-            return (IEnumerator<ICurve>)(teklaObject.GetEnumerator());
+            var teklaEnumerator = teklaObject.GetEnumerator();
+            List<ICurve> curves = new();
+            foreach (var teklaCurve in teklaEnumerator)
+            {
+                curves.Add(ICurve_.FromTSObject(teklaCurve));
+            }
+            return curves.GetEnumerator();
         }
         catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
         {

@@ -11,31 +11,7 @@ public  class RadialGrid  : GridBase
     {
 
 
-        public bool IsMagnetic
-        {
-            get
-            {
-                try
-                {
-                return teklaObject.IsMagnetic;
-                }
-                catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
-                {
-                    throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(IsMagnetic), ex); 
-                }
-            }
-            set
-            {
-                try
-                {
-                teklaObject.IsMagnetic = value;
-                }
-                catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
-                {
-                    throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(IsMagnetic), ex); 
-                }
-            }
-        }
+        
 
         public string RadialCoordinates
         {

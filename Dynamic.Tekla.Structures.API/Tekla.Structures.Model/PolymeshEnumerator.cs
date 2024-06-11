@@ -7,7 +7,7 @@ public class PolymeshEnumerator : IEnumerator
 {
     object IEnumerator.Current => Current;
 
-    public System.Object Current
+    public object Current
     {
         get
         {
