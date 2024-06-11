@@ -14,7 +14,7 @@ internal static class TeklaProcess
     private const string TEKLA_PROCESS_NAME = "TeklaStructures";
     internal static Dictionary<string, Assembly> APIAssemblies { get; private set; } = new Dictionary<string, Assembly>();
     public static string BinPath { get; private set; } = string.Empty;
-    public static TeklaFileVersion TeklaFileVersion { get; private set; }
+    public static Version TeklaFileVersion { get; private set; }
     public static Process teklaProcess { get; private set; }
 
     public static bool IsTeklaRunning()
@@ -57,16 +57,16 @@ internal static class TeklaProcess
             : null;
     }
 
-    private static TeklaFileVersion GetFileVersion(string teklaFilePath)
+    private static Version GetFileVersion(string teklaFilePath)
     {
         FileVersionInfo fvinfo = FileVersionInfo.GetVersionInfo(teklaFilePath);
-        return new TeklaFileVersion
-        {
-            Major = fvinfo.FileMajorPart,
-            Minor = fvinfo.FileMinorPart,
-            Build = fvinfo.FileBuildPart,
-            Build2 = fvinfo.FilePrivatePart,
-        };
+        return new Version
+        (
+            fvinfo.FileMajorPart,
+            fvinfo.FileMinorPart,
+            fvinfo.FileBuildPart,
+            fvinfo.FilePrivatePart
+        );
     }
 
     private static Dictionary<string, Assembly> GetAssemblies()

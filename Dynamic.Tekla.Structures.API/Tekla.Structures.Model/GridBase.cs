@@ -6,7 +6,7 @@ using Dynamic.Tekla.Structures.Internal.Invoker;
 namespace Dynamic.Tekla.Structures.Model;
 
 
-public abstract class GridBase  : ModelObject
+public abstract class GridBase : ModelObject
 {
 
 
@@ -177,28 +177,4 @@ internal static class GridBase_
     }
 }
 
-internal static class GridBaseArray_
-{
-    public static dynamic GetTSObject(GridBase[] dynArray)
-    {
-        if (dynArray is null) return null;
-        var list = new System.Collections.Generic.List<dynamic>();
-        foreach(var dynItem in dynArray)
-        {
-            list.Add(GridBase_.GetTSObject(dynItem));
-        }
-        return list.ToArray();
-    }
-
-    public static GridBase[] FromTSObject(dynamic[] tsArray)
-    {
-        if (tsArray is null) return null;
-        var list = new System.Collections.Generic.List<GridBase>();
-        foreach(var tsItem in tsArray)
-        {
-            list.Add(GridBase_.FromTSObject(tsItem));
-        }
-        return list.ToArray();
-    }
-}
 

@@ -38,7 +38,7 @@ public class FacetedBrepWithNormals : Dynamic.Tekla.Structures.Geometry3d.Facete
         }
     }
     internal FacetedBrepWithNormals() { }
-    //This constructor creates wrapper object using teklaObject. DateTime is never used but it is here to avoid conflicts with constructors with one argument
+    
     public FacetedBrepWithNormals(dynamic tsObject, System.DateTime nonConflictParameter)
     {
         teklaObject = tsObject;

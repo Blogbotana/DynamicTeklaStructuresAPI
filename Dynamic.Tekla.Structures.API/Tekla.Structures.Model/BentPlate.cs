@@ -1,5 +1,6 @@
 ﻿using Dynamic.Tekla.Structures.Internal;
 using Dynamic.Tekla.Structures.Internal.Exceptions;
+using System;
 
 namespace Dynamic.Tekla.Structures.Model;
 public sealed class BentPlate : Part
@@ -55,6 +56,9 @@ public sealed class BentPlate : Part
 
     public BentPlate()
     {
+        if (TeklaProcess.TeklaFileVersion <= new Version("2016.1.0.0"))
+            return;
+
         teklaObject = TSActivator.CreateInstance("Tekla.Structures.Model.BentPlate");
     }
     

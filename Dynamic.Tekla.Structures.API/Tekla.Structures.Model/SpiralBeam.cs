@@ -1,5 +1,6 @@
 using Dynamic.Tekla.Structures.Internal;
 using Dynamic.Tekla.Structures.Internal.Exceptions;
+using System;
 
 namespace Dynamic.Tekla.Structures.Model;
 public class SpiralBeam : Part
@@ -256,6 +257,9 @@ public class SpiralBeam : Part
 
     public SpiralBeam()
     {
+        if (TeklaProcess.TeklaFileVersion <= new Version("2017.0.0.0"))
+            return;
+
         teklaObject = TSActivator.CreateInstance("Tekla.Structures.Model.SpiralBeam");
     }
 

@@ -1,12 +1,15 @@
 using Dynamic.Tekla.Structures.Internal;
 using Dynamic.Tekla.Structures.Internal.Converters;
 using Dynamic.Tekla.Structures.Internal.Exceptions;
+using System;
+using System.Collections.Generic;
+
 namespace Dynamic.Tekla.Structures.Model;
 
 public class LoftedPlate : Part
 {
 
-    public System.Collections.Generic.List<Dynamic.Tekla.Structures.Geometry3d.ICurve> BaseCurves
+    public List<Dynamic.Tekla.Structures.Geometry3d.ICurve> BaseCurves
     {
         get
         {
@@ -66,6 +69,9 @@ public class LoftedPlate : Part
 
     public LoftedPlate()
     {
+        if (TeklaProcess.TeklaFileVersion < new Version("2019.1.0.0"))
+            return;
+
         teklaObject = TSActivator.CreateInstance("Tekla.Structures.Model.LoftedPlate");
     }
 

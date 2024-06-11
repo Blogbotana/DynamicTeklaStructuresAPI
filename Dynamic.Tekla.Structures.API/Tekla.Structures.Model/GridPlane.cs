@@ -1,12 +1,11 @@
 using Dynamic.Tekla.Structures.Internal;
-using Dynamic.Tekla.Structures.Internal.Converters;
 using Dynamic.Tekla.Structures.Internal.Exceptions;
-using Dynamic.Tekla.Structures.Internal.Invoker;
+using System;
 
 namespace Dynamic.Tekla.Structures.Model;
 
 
-public  class GridPlane  : GridSurface
+public class GridPlane : GridSurface
 {
 
 
@@ -16,25 +15,25 @@ public  class GridPlane  : GridSurface
         {
             try
             {
-            var value = teklaObject.Plane;
-            var value_ = Plane_.FromTSObject(value);
-            return (Plane) value_;
+                var value = teklaObject.Plane;
+                var value_ = Plane_.FromTSObject(value);
+                return (Plane)value_;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(Plane), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(Plane), ex);
             }
         }
         set
         {
             try
             {
-            var value_ = Plane_.GetTSObject(value);
-            teklaObject.Plane = value_;
+                var value_ = Plane_.GetTSObject(value);
+                teklaObject.Plane = value_;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(Plane), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(Plane), ex);
             }
         }
     }
@@ -43,27 +42,36 @@ public  class GridPlane  : GridSurface
     {
         get
         {
+            if (TeklaProcess.TeklaFileVersion > new Version("2018.1.0.0"))
+                return Parent as Grid;
+
             try
             {
-            var value = teklaObject.Father;
-            var value_ = Grid_.FromTSObject(value);
-            return (Grid) value_;
+                var value = teklaObject.Father;
+                var value_ = Plane_.FromTSObject(value);
+                return (Grid)value_;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(Father), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(Father), ex);
             }
         }
         set
         {
+            if (TeklaProcess.TeklaFileVersion > new Version("2018.1.0.0"))
+            {
+                Parent = value;
+                return;
+            }
+
             try
             {
-            var value_ = Grid_.GetTSObject(value);
-            teklaObject.Father = value_;
+                var value_ = Grid_.GetTSObject(value);
+                teklaObject.Father = value_;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(Father), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(Father), ex);
             }
         }
     }
@@ -75,22 +83,22 @@ public  class GridPlane  : GridSurface
         {
             try
             {
-            return teklaObject.Color;
+                return teklaObject.Color;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(Color), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(Color), ex);
             }
         }
         set
         {
             try
             {
-            teklaObject.Color = value;
+                teklaObject.Color = value;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(Color), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(Color), ex);
             }
         }
     }
@@ -101,45 +109,45 @@ public  class GridPlane  : GridSurface
         {
             try
             {
-            return teklaObject.ExtensionForMagneticArea;
+                return teklaObject.ExtensionForMagneticArea;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(ExtensionForMagneticArea), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(ExtensionForMagneticArea), ex);
             }
         }
         set
         {
             try
             {
-            teklaObject.ExtensionForMagneticArea = value;
+                teklaObject.ExtensionForMagneticArea = value;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(ExtensionForMagneticArea), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(ExtensionForMagneticArea), ex);
             }
         }
     }
-    
 
-    
 
-		public GridPlane()
-		{
-			teklaObject = TSActivator.CreateInstance("Tekla.Structures.Model.GridPlane");
-		}
-		
-		public GridPlane(dynamic tsObject, System.DateTime nonConflictParameter)
-		{
-			teklaObject = tsObject;
-		}
-		public GridPlane(Plane Plane, string Label)
-		{
-			var args = new object[2];
-			args[0] = Plane_.GetTSObject(Plane);
-			args[1] = Label;
-			teklaObject = TSActivator.CreateInstance("Tekla.Structures.Model.GridPlane", args);
-		}
+
+
+    public GridPlane()
+    {
+        teklaObject = TSActivator.CreateInstance("Tekla.Structures.Model.GridPlane");
+    }
+
+    public GridPlane(dynamic tsObject, System.DateTime nonConflictParameter)
+    {
+        teklaObject = tsObject;
+    }
+    public GridPlane(Plane Plane, string Label)
+    {
+        var args = new object[2];
+        args[0] = Plane_.GetTSObject(Plane);
+        args[1] = Label;
+        teklaObject = TSActivator.CreateInstance("Tekla.Structures.Model.GridPlane", args);
+    }
 
 
 
@@ -160,7 +168,7 @@ internal static class GridPlane_
         if (tsObject is null) return null;
         var typeName = "Dynamic." + tsObject.GetType().FullName;
         var type = System.Reflection.Assembly.GetExecutingAssembly().GetType(typeName);
-        
+
         var parameters = new object[2];
         parameters[0] = tsObject;
         parameters[1] = new System.DateTime();
@@ -177,7 +185,7 @@ internal static class GridPlaneArray_
     {
         if (dynArray is null) return null;
         var list = new System.Collections.Generic.List<dynamic>();
-        foreach(var dynItem in dynArray)
+        foreach (var dynItem in dynArray)
         {
             list.Add(GridPlane_.GetTSObject(dynItem));
         }
@@ -188,7 +196,7 @@ internal static class GridPlaneArray_
     {
         if (tsArray is null) return null;
         var list = new System.Collections.Generic.List<GridPlane>();
-        foreach(var tsItem in tsArray)
+        foreach (var tsItem in tsArray)
         {
             list.Add(GridPlane_.FromTSObject(tsItem));
         }

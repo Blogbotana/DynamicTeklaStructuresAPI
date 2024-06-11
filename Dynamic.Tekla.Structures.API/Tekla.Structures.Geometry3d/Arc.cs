@@ -166,6 +166,9 @@ public class Arc : ICurve, IEquatable<ICurve>
     }
     public Arc(Point startPoint, Point endPoint, Point pointOnArc)
     {
+        if (TeklaProcess.TeklaFileVersion <= new Version("2018.1.0.0"))
+            return;
+
         object[] args = new object[3];
         args[0] = Point_.GetTSObject(startPoint);
         args[1] = Point_.GetTSObject(endPoint);
@@ -174,6 +177,9 @@ public class Arc : ICurve, IEquatable<ICurve>
     }
     public Arc(Point centerPoint, Point startPoint, Vector normal, double deltaAngleRadians)
     {
+        if (TeklaProcess.TeklaFileVersion <= new Version("2018.1.0.0"))
+            return;
+
         object[] args = new object[4];
         args[0] = Point_.GetTSObject(centerPoint);
         args[1] = Point_.GetTSObject(startPoint);
@@ -183,6 +189,9 @@ public class Arc : ICurve, IEquatable<ICurve>
     }
     public Arc(Point centerPoint, Vector startDirection, Vector startTangent, double radius, double deltaAngleRadians)
     {
+        if (TeklaProcess.TeklaFileVersion <= new Version("2018.1.0.0"))
+            return;
+
         object[] args = new object[5];
         args[0] = Point_.GetTSObject(centerPoint);
         args[1] = Vector_.GetTSObject(startDirection);

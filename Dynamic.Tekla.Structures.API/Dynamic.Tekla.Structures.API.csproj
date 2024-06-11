@@ -51,7 +51,6 @@
     <Compile Include="Internal\Exceptions\DynamicAPITeklaNotRunningException.cs" />
     <Compile Include="Internal\Invoker\MethodInvoker.cs" />
     <Compile Include="Internal\Invoker\PropertyInvoker.cs" />
-    <Compile Include="Internal\TeklaFileVersion.cs" />
     <Compile Include="Internal\TeklaProcess.cs" />
     <Compile Include="Internal\TSActivator.cs" />
     <Compile Include="Internal\TypeFullName.cs" />

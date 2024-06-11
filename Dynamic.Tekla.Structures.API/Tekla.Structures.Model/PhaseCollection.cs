@@ -81,12 +81,7 @@ public class PhaseCollection
 }
 
 
-
-
-
-    }
-
-    internal static class PhaseCollection_
+internal static class PhaseCollection_
 {
     public static dynamic GetTSObject(PhaseCollection dynObject)
     {

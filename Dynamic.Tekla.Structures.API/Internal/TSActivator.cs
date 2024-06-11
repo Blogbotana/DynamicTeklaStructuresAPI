@@ -112,6 +112,7 @@ internal static class TSActivator
                 var methodParameters = method.GetParameters();
                 foreach (var parameter in methodParameters)
                 {
+                    var parametrFromI = parameters[i] is null ? new object() : parameters[i];
                     if (!(parameter.ParameterType.Equals(parameters[i].GetType())
                         || parameter.ParameterType.Equals(parameters[i].GetType().MakeByRefType())))
                     {

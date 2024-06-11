@@ -27,7 +27,7 @@ public class Settings
 
     public static bool TryGetValue(string name, out object obj)
     {
-        obj = null;
+        obj = new object();
         var result = (bool)MethodInvoker.InvokeStaticMethod("Tekla.Structures.Datatype.Settings", "TryGetValue", name, ref obj);
         return result;
     }

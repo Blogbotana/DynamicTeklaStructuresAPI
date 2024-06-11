@@ -15,7 +15,7 @@ public class GraphicsDrawer
     {
         this.teklaObject = TSActivator.CreateInstance("Tekla.Structures.Model.UI.GraphicsDrawer");
     }
-    //This constructor creates wrapper object using teklaObject. DateTime is never used but it is here to avoid conflicts with constructors with one argument
+    
     public GraphicsDrawer(dynamic tsObject, System.DateTime nonConflictParameter)
     {
         this.teklaObject = tsObject;

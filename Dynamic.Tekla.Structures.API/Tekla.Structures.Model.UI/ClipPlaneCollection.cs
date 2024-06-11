@@ -59,7 +59,7 @@ public class ClipPlaneCollection : ICollection, IEnumerable
     internal dynamic teklaObject;
 
     internal ClipPlaneCollection() { }
-    //This constructor creates wrapper object using teklaObject. DateTime is never used but it is here to avoid conflicts with constructors with one argument
+    
     public ClipPlaneCollection(dynamic tsObject, System.DateTime nonConflictParameter)
     {
         this.teklaObject = tsObject;

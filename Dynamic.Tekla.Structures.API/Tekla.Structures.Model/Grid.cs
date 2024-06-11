@@ -1,14 +1,11 @@
 using Dynamic.Tekla.Structures.Internal;
-using Dynamic.Tekla.Structures.Internal.Converters;
 using Dynamic.Tekla.Structures.Internal.Exceptions;
-using Dynamic.Tekla.Structures.Internal.Invoker;
 
 namespace Dynamic.Tekla.Structures.Model;
 
 
-public  class Grid  : GridBase
+public class Grid : GridBase
 {
-
 
     public string CoordinateX
     {
@@ -16,22 +13,22 @@ public  class Grid  : GridBase
         {
             try
             {
-            return teklaObject.CoordinateX;
+                return teklaObject.CoordinateX;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(CoordinateX), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(CoordinateX), ex);
             }
         }
         set
         {
             try
             {
-            teklaObject.CoordinateX = value;
+                teklaObject.CoordinateX = value;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(CoordinateX), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(CoordinateX), ex);
             }
         }
     }
@@ -42,22 +39,22 @@ public  class Grid  : GridBase
         {
             try
             {
-            return teklaObject.CoordinateY;
+                return teklaObject.CoordinateY;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(CoordinateY), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(CoordinateY), ex);
             }
         }
         set
         {
             try
             {
-            teklaObject.CoordinateY = value;
+                teklaObject.CoordinateY = value;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(CoordinateY), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(CoordinateY), ex);
             }
         }
     }
@@ -68,22 +65,22 @@ public  class Grid  : GridBase
         {
             try
             {
-            return teklaObject.CoordinateZ;
+                return teklaObject.CoordinateZ;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(CoordinateZ), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(CoordinateZ), ex);
             }
         }
         set
         {
             try
             {
-            teklaObject.CoordinateZ = value;
+                teklaObject.CoordinateZ = value;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(CoordinateZ), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(CoordinateZ), ex);
             }
         }
     }
@@ -94,22 +91,22 @@ public  class Grid  : GridBase
         {
             try
             {
-            return teklaObject.LabelX;
+                return teklaObject.LabelX;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(LabelX), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(LabelX), ex);
             }
         }
         set
         {
             try
             {
-            teklaObject.LabelX = value;
+                teklaObject.LabelX = value;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(LabelX), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(LabelX), ex);
             }
         }
     }
@@ -120,22 +117,22 @@ public  class Grid  : GridBase
         {
             try
             {
-            return teklaObject.LabelY;
+                return teklaObject.LabelY;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(LabelY), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(LabelY), ex);
             }
         }
         set
         {
             try
             {
-            teklaObject.LabelY = value;
+                teklaObject.LabelY = value;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(LabelY), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(LabelY), ex);
             }
         }
     }
@@ -146,22 +143,22 @@ public  class Grid  : GridBase
         {
             try
             {
-            return teklaObject.LabelZ;
+                return teklaObject.LabelZ;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(LabelZ), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(LabelZ), ex);
             }
         }
         set
         {
             try
             {
-            teklaObject.LabelZ = value;
+                teklaObject.LabelZ = value;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(LabelZ), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(LabelZ), ex);
             }
         }
     }
@@ -172,22 +169,22 @@ public  class Grid  : GridBase
         {
             try
             {
-            return teklaObject.ExtensionLeftX;
+                return teklaObject.ExtensionLeftX;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(ExtensionLeftX), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(ExtensionLeftX), ex);
             }
         }
         set
         {
             try
             {
-            teklaObject.ExtensionLeftX = value;
+                teklaObject.ExtensionLeftX = value;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(ExtensionLeftX), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(ExtensionLeftX), ex);
             }
         }
     }
@@ -198,22 +195,22 @@ public  class Grid  : GridBase
         {
             try
             {
-            return teklaObject.ExtensionLeftY;
+                return teklaObject.ExtensionLeftY;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(ExtensionLeftY), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(ExtensionLeftY), ex);
             }
         }
         set
         {
             try
             {
-            teklaObject.ExtensionLeftY = value;
+                teklaObject.ExtensionLeftY = value;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(ExtensionLeftY), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(ExtensionLeftY), ex);
             }
         }
     }
@@ -224,22 +221,22 @@ public  class Grid  : GridBase
         {
             try
             {
-            return teklaObject.ExtensionLeftZ;
+                return teklaObject.ExtensionLeftZ;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(ExtensionLeftZ), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(ExtensionLeftZ), ex);
             }
         }
         set
         {
             try
             {
-            teklaObject.ExtensionLeftZ = value;
+                teklaObject.ExtensionLeftZ = value;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(ExtensionLeftZ), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(ExtensionLeftZ), ex);
             }
         }
     }
@@ -250,22 +247,22 @@ public  class Grid  : GridBase
         {
             try
             {
-            return teklaObject.ExtensionRightX;
+                return teklaObject.ExtensionRightX;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(ExtensionRightX), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(ExtensionRightX), ex);
             }
         }
         set
         {
             try
             {
-            teklaObject.ExtensionRightX = value;
+                teklaObject.ExtensionRightX = value;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(ExtensionRightX), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(ExtensionRightX), ex);
             }
         }
     }
@@ -276,22 +273,22 @@ public  class Grid  : GridBase
         {
             try
             {
-            return teklaObject.ExtensionRightY;
+                return teklaObject.ExtensionRightY;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(ExtensionRightY), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(ExtensionRightY), ex);
             }
         }
         set
         {
             try
             {
-            teklaObject.ExtensionRightY = value;
+                teklaObject.ExtensionRightY = value;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(ExtensionRightY), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(ExtensionRightY), ex);
             }
         }
     }
@@ -302,22 +299,22 @@ public  class Grid  : GridBase
         {
             try
             {
-            return teklaObject.ExtensionRightZ;
+                return teklaObject.ExtensionRightZ;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(ExtensionRightZ), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(ExtensionRightZ), ex);
             }
         }
         set
         {
             try
             {
-            teklaObject.ExtensionRightZ = value;
+                teklaObject.ExtensionRightZ = value;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(ExtensionRightZ), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(ExtensionRightZ), ex);
             }
         }
     }
@@ -328,22 +325,22 @@ public  class Grid  : GridBase
         {
             try
             {
-            return teklaObject.ExtensionForMagneticArea;
+                return teklaObject.ExtensionForMagneticArea;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(ExtensionForMagneticArea), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(ExtensionForMagneticArea), ex);
             }
         }
         set
         {
             try
             {
-            teklaObject.ExtensionForMagneticArea = value;
+                teklaObject.ExtensionForMagneticArea = value;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(ExtensionForMagneticArea), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(ExtensionForMagneticArea), ex);
             }
         }
     }
@@ -354,42 +351,36 @@ public  class Grid  : GridBase
         {
             try
             {
-            return teklaObject.Color;
+                return teklaObject.Color;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(Color), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(Color), ex);
             }
         }
         set
         {
             try
             {
-            teklaObject.Color = value;
+                teklaObject.Color = value;
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
             {
-                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(Color), ex); 
+                throw DynamicAPINotFoundException.CouldNotFindProperty(nameof(Color), ex);
             }
         }
     }
-    
-
-    
-
-		public Grid()
-		{
-			teklaObject = TSActivator.CreateInstance("Tekla.Structures.Model.Grid");
-		}
-		
-		public Grid(dynamic tsObject, System.DateTime nonConflictParameter)
-		{
-			teklaObject = tsObject;
-		}
 
 
+    public Grid()
+    {
+        teklaObject = TSActivator.CreateInstance("Tekla.Structures.Model.Grid");
+    }
 
-
+    public Grid(dynamic tsObject, System.DateTime nonConflictParameter)
+    {
+        teklaObject = tsObject;
+    }
 
 }
 
@@ -406,7 +397,7 @@ internal static class Grid_
         if (tsObject is null) return null;
         var typeName = "Dynamic." + tsObject.GetType().FullName;
         var type = System.Reflection.Assembly.GetExecutingAssembly().GetType(typeName);
-        
+
         var parameters = new object[2];
         parameters[0] = tsObject;
         parameters[1] = new System.DateTime();
@@ -423,7 +414,7 @@ internal static class GridArray_
     {
         if (dynArray is null) return null;
         var list = new System.Collections.Generic.List<dynamic>();
-        foreach(var dynItem in dynArray)
+        foreach (var dynItem in dynArray)
         {
             list.Add(Grid_.GetTSObject(dynItem));
         }
@@ -434,7 +425,7 @@ internal static class GridArray_
     {
         if (tsArray is null) return null;
         var list = new System.Collections.Generic.List<Grid>();
-        foreach(var tsItem in tsArray)
+        foreach (var tsItem in tsArray)
         {
             list.Add(Grid_.FromTSObject(tsItem));
         }

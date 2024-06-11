@@ -97,7 +97,7 @@ public class FacetedBrep
     internal dynamic teklaObject;
 
     internal FacetedBrep() { }
-    //This constructor creates wrapper object using teklaObject. DateTime is never used but it is here to avoid conflicts with constructors with one argument
+    
     public FacetedBrep(dynamic tsObject, System.DateTime nonConflictParameter)
     {
         teklaObject = tsObject;
